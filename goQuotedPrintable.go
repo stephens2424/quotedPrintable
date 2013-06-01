@@ -7,6 +7,20 @@ import (
   "encoding/hex"
 )
 
+func NewEncoder() *QuotedPrintableEncoder {
+  return &QuotedPrintableEncoder{}
+}
+
+type QuotedPrintableEncoder struct {}
+
+func (encoder *QuotedPrintableEncoder) TransferEncodingType() string {
+  return "quoted-printable"
+}
+
+func (encoder *QuotedPrintableEncoder) Encode(src []byte) []byte {
+  return Encode(src)
+}
+
 // Encodes bytes to quoted printable bytes. The resulting slice may
 // be longer than the input slice.
 func Encode(src []byte) []byte {
