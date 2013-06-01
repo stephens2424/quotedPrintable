@@ -7,6 +7,8 @@ import (
   "encoding/hex"
 )
 
+// Encodes bytes to quoted printable bytes. The resulting slice may
+// be longer than the input slice.
 func Encode(src []byte) []byte {
   var dstBuilder []byte
   if len(src) == 0 {
@@ -28,6 +30,7 @@ func Encode(src []byte) []byte {
   return dstBuilder
 }
 
+// Encodes bytes to a quoted printable string.
 func EncodeToString(src []byte) string {
   return string(Encode(src))
 }
