@@ -7,17 +7,17 @@ import (
   "encoding/hex"
 )
 
-func NewEncoder() *QuotedPrintableEncoder {
-  return &QuotedPrintableEncoder{}
+func NewEncoder() QuotedPrintableEncoder {
+  return QuotedPrintableEncoder{}
 }
 
 type QuotedPrintableEncoder struct {}
 
-func (encoder *QuotedPrintableEncoder) TransferEncodingType() string {
+func (encoder QuotedPrintableEncoder) TransferEncodingType() string {
   return "quoted-printable"
 }
 
-func (encoder *QuotedPrintableEncoder) Encode(src []byte) []byte {
+func (encoder QuotedPrintableEncoder) Encode(src []byte) []byte {
   return Encode(src)
 }
 
