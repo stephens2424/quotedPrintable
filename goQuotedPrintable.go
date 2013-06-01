@@ -1,6 +1,6 @@
 // quotedPrintable implements an encoder for the quoted-printable
 // wire format defined in RFC 2045.
-package goQuotedPrintable
+package quotedPrintable
 
 import (
   "strings"
